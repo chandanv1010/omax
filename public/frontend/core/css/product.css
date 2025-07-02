@@ -591,7 +591,6 @@ label{
 }
 
 .product-detail__description{
-    height:124px;
     overflow-y: scroll;
     scrollbar-width: thin;
 }

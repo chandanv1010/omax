@@ -1,8 +1,16 @@
 @extends('frontend.homepage.layout')
 @section('content')
-
+@php
+    $breadcrumbImage = !empty($postCatalogue->album) ? json_decode($postCatalogue->album, true)[0] : asset('userfiles/image/system/breadcrumb.png');
+@endphp
 <div class="post-detail">
-    @include('frontend.component.breadcrumb', ['model' => $postCatalogue, 'breadcrumb' => $breadcrumb])
+    <div class="project-banner">
+        <span class="image img-cover"><img src="{{ $breadcrumbImage }}" alt=""></span>
+        @include('frontend.component.breadcrumb', [
+            'model' => $postCatalogue,
+            'breadcrumb' => $breadcrumb,
+        ])
+    </div>
     <div class="product-catalogue-wrapper post-container">
         <div class="uk-container uk-container-center">
             <h1 class="page-heading">{{ $post->languages->first()->pivot->name }}</h1>
@@ -22,51 +30,45 @@
                         {!! $post->languages->first()->pivot->content !!}
                     </div>
                 </div>
-                @if($post->status_menu != 2)
-                    <div class="post-aside">
-                        @if($widgets['news-feature'])
-                        <div class="post-featured">
-                            <div class="aside-heading">{{ $widgets['news-feature']->name }}</div>
-                            <div>
-                                @foreach($widgets['news-feature']->object as $key => $val)
-                                    @php
-                                        $name = $val->languages->name;
-                                        $canonical = write_url($val->languages->canonical);
-                                        $createdAt = $val->created_at;
-                                    @endphp
-                                    <div class="post-feature-item">
-                                        <h3 class="title"><a href="{{ $canonical }}" title="{{ $name }}">{{ $name }}</a></h3>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                        @endif
-
-                        @if($widgets['projects-feature'])
-                        <div class="post-featured mt40" data-uk-sticky="{boundary: true}">
-                            <div class="aside-heading">{{ $widgets['projects-feature']->name }}</div>
-                            <div>
-                                @foreach($widgets['projects-feature']->object as $key => $val)
-                                @php
-                                    $name = $val->languages->name;
-                                    $canonical = write_url($val->languages->canonical);
-                                    $createdAt = $val->created_at;
-                                    $image = thumb($val->image, 600, 400);
-                                @endphp
-                                <div class="post-feature-item">
-                                    <a href="{{ $canonical }}" class="image img-cover"><img src="{{ $image }}" alt="{{ $name }}"></a>
-                                    <h3 class="title"><a href="{{ $canonical }}" title="{{ $name }}">{{ $name }}</a></h3>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                        @endif
-                    </div>
-                @endif
             </div>
         </div>
     </div>
-    @include('frontend.component.news')
+     
+    <div class="panel-news fix mb40">
+        <div class="uk-container uk-container-center">
+            <div class="panel-head uk-text-center mb30">
+                <h2 class="heading-5"><span>Bài Viết liên quan</span></h2>
+            </div>
+            <div class="panel-body">
+                <div class="uk-grid uk-grid-medium">
+                    @foreach($asidePost as $key => $post)
+                        @php
+                            $name = $post->languages->first()->pivot->name;
+                            $canonical = write_url($post->languages->first()->pivot->canonical);
+                            $image = thumb($post->image, 600, 400);
+                            $description = cutnchar(strip_tags($post->languages->first()->pivot->description), 250);
+                        @endphp
+                        <div class="uk-width-small-1-1 uk-width-medium-1-2 uk-width-medium-1-4">
+                            <div class="post-item">
+                                <a href="{{ $canonical }}" title="{{ $name }}" class="image img-cover img-zoomin">
+                                    <img src="{{ $image }}" alt="{{ $name }}">
+                                </a>
+                                <div class="info" style="margin-top:10px;">
+                                    <h3 class="title"><a href="{{ $canonical }}" title="{{ $name }}">{{ $name }}</a></h3>
+                                    <div class="description">
+                                        {!! $description !!}
+                                    </div>
+                                    <div class="read">
+                                        <a href="{{ $canonical }}" class="b-readmore">Xem thêm >></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>

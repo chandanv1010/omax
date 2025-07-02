@@ -33,38 +33,25 @@
 	
 	/* MAIN VARIABLE */
 	HT.swiper = () => {
-        if($('.panel-slide').length){
-            // Kiểm tra đã có swiper chưa
-            if(window.mainSwiper) {
-                console.log('Swiper already exists');
-                return; // Thoát luôn, không tạo mới
-            }
-            
-            setTimeout(() => {
-                let setting = JSON.parse($('.panel-slide').attr('data-setting'))
-                let option = HT.swiperOption(setting)
-                
-                option.slidesPerView = 1;
-                option.spaceBetween = 0;
-                option.allowTouchMove = true;
-                
-                console.log('Creating Swiper with options:', option);
-                window.mainSwiper = new Swiper(".panel-slide .swiper-container", option);
-                console.log('Swiper created successfully');
-                
-            }, 800);
-        }
-    }
-	HT.carousel = () => {
-		$carousel.each(function(){
-			let _this = $(this);
-			let option = _this.find('.owl-carousel').attr('data-owl');
-			let owlInit = atob(option);
-			owlInit = JSON.parse(owlInit);
-			_this.find('.owl-carousel').owlCarousel(owlInit);
-		});
+		if($('.panel-slide').length){
+			let setting = JSON.parse($('.panel-slide').attr('data-setting'))
+			let option = HT.swiperOption(setting)
+			var swiper = new Swiper(".panel-slide .swiper-container", option);
+		}
 		
-	} 
+	}
+
+
+	// HT.carousel = () => {
+	// 	$carousel.each(function(){
+	// 		let _this = $(this);
+	// 		let option = _this.find('.owl-carousel').attr('data-owl');
+	// 		let owlInit = atob(option);
+	// 		owlInit = JSON.parse(owlInit);
+	// 		_this.find('.owl-carousel').owlCarousel(owlInit);
+	// 	});
+		
+	// } 
 
 
 	HT.category = () => {
@@ -89,7 +76,7 @@
 				  slidesPerView: 3,
 				},
 				1280: {
-					slidesPerView: 6,
+					slidesPerView: 3,
 				}
 			},
 			navigation: {
@@ -632,10 +619,36 @@
     };
 
     
-
+    HT.popupSwiperSlide = () => {
+		document.querySelectorAll(".popup-gallery").forEach(popup => {
+			var swiper = new Swiper(popup.querySelector(".swiper-container"), {
+				loop: true,
+				// autoplay: {
+				// 	delay: 2000,
+				// 	disableOnInteraction: false,
+				// },
+				pagination: {
+					el: '.swiper-pagination',
+				},
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				thumbs: {
+					swiper: {
+						el: popup.querySelector('.swiper-container-thumbs'),
+						slidesPerView: 4,
+                        spaceBetween: 10,
+						slideToClickedSlide: true,
+					}
+				}
+			});
+		});
+	}
 
 
 	$(document).ready(function(){
+        HT.popupSwiperSlide();
         HT.highlightTocOnScroll();
         HT.scrollHeading()
         HT.requestConsult()
@@ -649,9 +662,10 @@
 		HT.swiperAsideFeature()
 		
 		/* CORE JS */
-		HT.manualSlide()
+        HT.swiper()
+		// HT.manualSlide()
 		HT.niceSelect()		
-		HT.carousel()
+		// HT.carousel()
 		HT.select2()
 		HT.loadDistribution()
 		HT.wrapTable()

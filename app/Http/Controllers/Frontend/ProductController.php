@@ -145,13 +145,8 @@ class ProductController extends FrontendController
 
         $seo = seo($product);
 
-        if (Agent::isMobile()) {
-            $template = 'mobile.product.product.index';
-        } else {
-            $template = 'frontend.product.product.index';
-        }
-
         $schema = $this->schema($product, $productCatalogue, $breadcrumb);
+        $template = 'frontend.product.product.index';
 
         return view($template, compact(
             'config',

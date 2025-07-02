@@ -1,16 +1,17 @@
 @extends('frontend.homepage.layout')
 @section('content')
     
+    @php
+        $breadcrumbImage = !empty($postCatalogue->album) ? json_decode($postCatalogue->album, true)[0] : asset('userfiles/image/system/breadcrumb.png');
+    @endphp
     <div class="post-catalogue page-wrapper intro-wrapper">
-        @if (!empty($postCatalogue->image))
-        <div class="project-banner">
-            <img src="{{ image($postCatalogue->image) }}" alt="">
+         <div class="project-banner">
+            <span class="image img-cover"><img src="{{ $breadcrumbImage }}" alt=""></span>
             @include('frontend.component.breadcrumb', [
                 'model' => $postCatalogue,
                 'breadcrumb' => $breadcrumb,
             ])
         </div>
-    @endif
         <div class="product-catalogue-wrapper">
             <div class="uk-container uk-container-center">
                 @if(isset($postCatalogue->children) && !is_null($postCatalogue->children) )
@@ -27,14 +28,6 @@
                     </ul>
                 @endif
                 <h1 class="page-heading">{{ $postCatalogue->languages->first()->pivot->name }}</h1>
-                <ul class="uk-tab uk-container uk-container-center uk-flex uk-flex-center uk-flex-middle tabs"
-                uk-tab="connect: #product-switcher">
-                <li class="item uk-active"><a href="#">Mới nhất</a></li>
-                <li class="item"><a href="#">Tên thị trường</a></li>
-                <li class="item"><a href="#">Tin Công ty</a></li>
-                <li class="item"><a href="#">Tin tuyển dụng</a></li>
-            </ul>
-
             </div>
         </div>
         <div class="post-container">

@@ -101,7 +101,8 @@
                         items: 1,
                         margin: 10
                     },
-                    1000: {
+
+                    1200: {
                         nav: false,
                         items: 3,
                     },

@@ -71,6 +71,7 @@ class postController extends FrontendController
             ['path' => $postCatalogue->canonical],
         );
 
+
         $widgets = $this->widgetService->getWidget([
             ['keyword' => 'news-feature'],
             ['keyword' => 'projects-feature'],
@@ -87,16 +88,9 @@ class postController extends FrontendController
         $system = $this->system;
         $seo = seo($post);
 
-        if(Agent::isMobile() && $post->template == '1'){
-            $template = 'mobile.post.post.design';
-        }else if($post->template == '1'){
-            $template = 'frontend.post.post.design';
-        }
-        else if(Agent::isMobile()){
-            $template = 'mobile.post.post.index';
-        }else{
-            $template = 'frontend.post.post.index';
-        }
+
+
+        $template = 'frontend.post.post.index';
 
         $schema = $this->schema($post, $postCatalogue, $breadcrumb);
 

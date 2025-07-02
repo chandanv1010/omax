@@ -1,10 +1,4 @@
-@if (
-!request()->routeIs('tin-tuc*') && !(request()->is('*tin-tuc*'))
 
-&&
-
-!request()->routeIs('video*') && !(request()->is('*video*'))
-)
 <div class="customer-banner">
     @if (isset($widgets['customer-banner']))
         <div class="uk-container uk-container-center customer-banner-content">
@@ -33,89 +27,72 @@
         </div>
     @endif
 </div>
-@endif
 <footer class="footer">
-    <div class="panel-official">
-        <div class="uk-container uk-container-center">
-            <div class="uk-grid uk-grid-large">
-                <div class="uk-width-large-1-3">
-                    <div class="official-item">
-                        <div class="footer-logo">
-                            <img src="{{ $system['homepage_logo'] }}" alt="{{ $system['homepage_logo'] }}">
-                            <h3 class="footer-title">Công ty cổ phần Lecmax Việt Nam</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row uk-clearfix">
-                                <span class="value">{{ $system['contact_office'] }}</span>
-                                <span class="value">{{ $system['contact_hotline'] }}</span>
-                            </div>
-                            <div class="row uk-clearfix">
-                                <span class="value">{{ $system['contact_office'] }}</span>
-                                <span class="value">{{ $system['contact_hotline'] }}</span>
-                            </div>
-                            <div class="row uk-clearfix">
-                                <span class="value">{{ $system['contact_office'] }}</span>
-                                 <span class="value">{{ $system['contact_hotline'] }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="uk-width-large-1-3">
-                    <div class="official-item">
-                        <div class="panel-head">
-                           Chính sách
-                        </div>
-                        <div class="panel-body">
-                            <div class="row uk-clearfix">
-                                <span class="label"></i>Chính sách bảo mật:</span>
-                            </div>
-                            <div class="row uk-clearfix">
-                                <span class="label"></i>Chính sách thanh toán: </span>
-                            </div>
-                            <div class="row uk-clearfix">
-                                <span class="label"></i>Chính sách bảo hành: </span>
-                            </div>
-                            <div class="row uk-clearfix">
-                                <span class="label"></i>Chính sách đổi trả:</span>
-                            </div>
-                            <div class="row uk-clearfix">
-                                <span class="label"></i>Chính sách bảo hiểm:</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="uk-width-large-1-3">
-                    <div class="official-item">
-                        <div class="panel-head">
-                            Kết nối với chúng tôi
-                        </div>
-                        <div class="panel-body">
-                            <div class="row uk-clearfix">
-                                <span class="label">Link Facebook:</span>
-                            </div>
-                            <div class="row uk-clearfix">
-                                <span class="label">Link Yotube: </span>
-                            </div>
-                            <div class="row uk-clearfix">
-                                <span class="label">Link Zalo: </span>
-                            </div>
-                            <div class="row uk-clearfix">
-                                <span class="label">Link Khác: </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="uk-container uk-container-center">
+    <div class="footer-upper">
+      <div class="uk-grid uk-grid-medium">
+        <div class="uk-width-large-1-3">
+          <div class="footer-company">
+            <div class="footer-contact">
+              <div class="heading-6">
+                <span>{{ $system['homepage_company'] }}</span>
+              </div>
+              <p class="address">Văn Phòng : {{ $system['contact_address'] }}</p>
+              {{-- <p class="address">Nhà Máy : {{ $system['contact_official'] }}</p> --}}
+              <p class="phone">Hotline: {{ $system['contact_hotline'] }}</p>
+              <p class="email">Email: {{ $system['contact_email'] }}</p>
             </div>
+          </div>
         </div>
-    </div>
-    
-    <div class="copyright">
-        <div class="uk-container uk-container-center">
-            <div class="uk-text-center">
-                {{ $system['homepage_copyright']}}
+        <div class="uk-width-large-2-3">
+          <div class="footer-container">
+            <div class="uk-grid uk-grid-medium">
+                @foreach($menu['footer-menu'] as $key => $val)
+                   @php
+                       $name = $val['item']->languages->first()->pivot->name;
+                   @endphp
+              <div class="uk-width-large-1-3">
+                <div class="footer-menu">
+                  <div class="heading">{{ $name }}</div>
+                  @if(count($val['children']))
+                  <ul class="uk-list uk-clearfix">
+                    @foreach($val['children'] as $item)
+                    @php
+                        $name = $item['item']->languages->first()->pivot->name;
+                        $canonical = write_url($item['item']->languages->first()->pivot->canonical);
+                    @endphp
+                    <li>
+                      <a href="{{ $canonical }}" title="{{ $name }}">{{ $name }}</a>
+                    </li>
+                    @endforeach
+                  </ul>
+                  @endif
+                </div>
+              </div>
+              @endforeach
+              <div class="uk-width-large-1-3">
+                <div class="footer-menu">
+                  <div class="heading">Theo dõi chúng tôi trên</div>
+                  <div class="social-footer">
+                    <div class="social-item facebook">
+                      <a href="{{ $system['social_facebook'] }}" title="">Facebook</a>
+                    </div>
+                    <div class="social-item youtube">
+                      <a href="{{ $system['social_youtube'] }}" title="">Youtube</a>
+                    </div>
+                    <div class="social-item zalo">
+                      <a href="" title="">Zalo</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-
+  </div>
+  <div class="copyright" style="padding: 15px 0">
+    <div class="uk-text-center"> Copyright {{ $system['homepage_company'] }} 2025. Thiết kế bởi HT Việt Nam </div>
+  </div>
 </footer>

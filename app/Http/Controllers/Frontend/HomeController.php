@@ -43,9 +43,9 @@ class HomeController extends FrontendController
         $widgets = $this->widgetService->getWidget([
             ['keyword' => 'cate-home-product', 'object' => true],
             ['keyword' => 'feature-product', 'object' => true, 'children' => true],
-            ['keyword' => 'post', 'object' => true],
+            ['keyword' => 'post', 'object' => true, 'children' => true],
             ['keyword' => 'video', 'object' => true],
-            ['keyword' => 'news', 'object' => true],
+            ['keyword' => 'news', 'object' => true, 'children' => true],
             ['keyword' => 'customer-banner', 'object' => true],
         ], $this->language);
 
@@ -69,13 +69,7 @@ class HomeController extends FrontendController
 
         $ishome = true;
 
-        if (Agent::isMobile()) {
-            $template = 'mobile.homepage.home.index';
-        } else {
-            $template = 'frontend.homepage.home.index';
-        }
-
-
+        $template = 'frontend.homepage.home.index';
         return view($template, compact(
             'config',
             'slides',

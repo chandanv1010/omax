@@ -1,65 +1,15 @@
 @extends('frontend.homepage.layout')
 @section('content')
+    @php
+    $breadcrumbImage = !empty($productCatalogue->album) ? json_decode($productCatalogue->album, true)[0] : asset('userfiles/image/system/breadcrumb.png');
+    @endphp
     <div class="product-catalogue page-wrapper">
-        @if (!empty($productCatalogue->image))
-            <div class="product-banner">
-                <img src="{{ image($productCatalogue->image) }}" alt="">
-                @include('frontend.component.breadcrumb', [
-                    'model' => $productCatalogue,
-                    'breadcrumb' => $breadcrumb,
-                ])
-            </div>
-        @endif
-        <div class="product-catalogue-wrapper">
-            <div class="uk-container uk-container-center">
-                {{-- @if (!is_null($menu['main-menu_array']))
-                    @foreach ($menu['main-menu_array'] as $key => $val)
-                        @if ($key !== 2) @continue @endif
-                        <ul class="children">
-                            @foreach ($val['children'] as $key2 => $item)
-                                @php
-                                    $name = $item['item']->languages->first()->pivot->name;
-                                    $canonical = write_url($item['item']->languages->first()->pivot->canonical);
-                                @endphp
-                            <li>
-                                <a href="{{ $canonical }}" title="{{ $name }}" class="{{ $item['item']->languages->first()->pivot->canonical == $productCatalogue->canonical ? 'active' : '' }}">{{ $name }}</a>
-                            </li>
-                            @endforeach
-                        </ul>
-                    @endforeach
-                @endif --}}
-                <h1 class="page-heading" style="text-align: center;">Sản Phẩm</h1>
-                <ul class="uk-tab uk-container uk-container-center uk-flex uk-flex-center uk-flex-middle tabs"
-                            uk-tab="connect: #product-switcher">
-                            <li class="uk-active"><a href="#">Phụ kiện</a></li>
-                            <li><a href="#">Tủ bếp Inox cao cấp</a></li>
-                            <li><a href="#">Cửa Thép chống cháy</a></li>
-                            <li><a href="#">Cửa kính chống cháy</a></li>
-                            <li><a href="#">Cửa thép ván gỗ</a></li>
-                </ul>
-                @if (!is_null($children))
-                    <ul class="children">
-                        @foreach ($children as $key => $item)
-                            @php
-                                $name = $item->languages->first()->pivot->name;
-                                $canonical = write_url($item->languages->first()->pivot->canonical);
-                            @endphp
-                            <li>
-                                <a href="{{ $canonical }}" title="{{ $name }}"
-                                    class="{{ $item->languages->first()->pivot->canonical == $productCatalogue->canonical ? 'active' : '' }}">{{ $name }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-                @endif
-                <div class="uk-flex uk-flex-between uk-flex-middle" style="width: 100%">
-                    <h1 class="page-heading">{{ $productCatalogue->languages->first()->pivot->name }}</h1>
-                <div class="owl-nav-custom">
-                    <button class="owl-prev-custom">‹</button>
-                    <button class="owl-next-custom">›</button>
-                </div>
-                </div>
-                
-            </div>
+        <div class="project-banner">
+            <span class="image img-cover"><img src="{{ $breadcrumbImage }}" alt=""></span>
+            @include('frontend.component.breadcrumb', [
+                'model' => $productCatalogue,
+                'breadcrumb' => $breadcrumb,
+            ])
         </div>
         <div class="panel-body mb30">
             <div class="uk-container uk-container-center mt20">
@@ -68,20 +18,17 @@
                         <h1 class="heading-2"><span></span></h1>
                     </div>
                     @if (!is_null($products))
-                        <div class="product-list">
-                            <div class="owl-carousel owl-theme product-carousel">
-                                @foreach ($products as $product)
-                                    @include('frontend.component.p-item', ['product' => $product])
-                                @endforeach
-                            </div>
-
-
+                    <div class="uk-grid uk-grid-medium">
+                        @foreach ($products as $product)
+                        <div class="uk-width-medium-1-2 uk-width-large-1-4 mb20">
+                            @include('frontend.component.p-item', ['product' => $product])
                         </div>
-
-                        <div class="uk-flex uk-flex-center">
-                            @include('frontend.component.pagination', ['model' => $products])
-                        </div>
+                         @endforeach
+                    </div>
                     @endif
+                    <div class="uk-flex uk-flex-center">
+                        @include('frontend.component.pagination', ['model' => $products])
+                    </div>
                 </div>
             </div>
         </div>

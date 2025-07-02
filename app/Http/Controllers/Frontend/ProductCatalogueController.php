@@ -85,14 +85,9 @@ class ProductCatalogueController extends FrontendController
 
         $seo = seo($productCatalogue, $page);
 
-        if (Agent::isMobile()) {
-            $template = 'mobile.product.catalogue.index';
-        } else {
-            $template = 'frontend.product.catalogue.index';
-        }
-
+   
         $schema = $this->schema($productCatalogue, $products, $breadcrumb);
-
+        $template = 'frontend.product.catalogue.index';
         return view($template, compact(
             'children',
             'config',
