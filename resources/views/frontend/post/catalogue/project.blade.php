@@ -13,18 +13,15 @@
 
         <div class="uk-container uk-container-center">
             <div class="project-container">
-
-
                 <h1 class="heading-6"><span>{{ $postCatalogue->name }}</span></h1>
 
-                <ul class="uk-tab uk-container uk-container-center uk-flex uk-flex-center uk-flex-middle tabs"
-                            uk-tab="connect: #product-switcher">
-                            <li class="uk-active"><a href="#">Khu độ thị , tòa nhà</a></li>
-                            <li><a href="#">Trụ sở văn phòng</a></li>
-                            <li><a href="#">Trường học, bệnh viện</a></li>
-                            <li><a href="#">Khách sạn , TT thương mại</a></li>
-                            <li><a href="#">Nhà máy , khu công nghiệp</a></li>
+                @if(isset($postCatalogue->children) && count($postCatalogue->children))
+                <ul class="uk-container uk-container-center uk-flex uk-flex-center uk-flex-middle switcher-tab">
+                    @foreach($postCatalogue->children as $key => $val)
+                    <li><a href="{{ write_url($val->languages->first()->pivot->canonical) }}">{{ $val->languages->first()->pivot->name }}</a></li>
+                    @endforeach
                 </ul>
+                @endif
                 <div class="project-list">
                     @if (!is_null($posts))
                         <div class="uk-grid uk-grid-medium">

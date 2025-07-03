@@ -9,7 +9,7 @@
 }
 
 body{
-    font-family: 'Questrial', sans-serif;
+    font-family: 'Roboto Flex', sans-serif;
     min-height: 1000px;
 }
 
@@ -306,7 +306,8 @@ ul li,ol li{
 
 .panel-product .heading-3 {
     width: 100%;
-    font-size: 36px;
+    font-size: 30px;
+    text-transform: uppercase;
     font-weight: 700;
     color: #d8271d;
     text-align: center;
@@ -457,6 +458,7 @@ ul li,ol li{
     font-size: 36px;
     font-weight: 700;
     color: #d8271d;
+    padding-bottom:0;
     text-align: center;
 }
 
@@ -1460,10 +1462,15 @@ form .btn button {
     padding: 10px;
     border: 1px solid #DDE4F0;
     border-radius: 10px;
-    height: 80px;
+    height: 95px;
+    width:95px;
+    display: block;
+}
+.vt-item  svg{
+    width:100%;
 }
 .swiper-container-thumbs{
-    height:490px;
+    height:360px;
     overflow: hidden;
 }
 
@@ -1557,4 +1564,314 @@ form .btn button {
 }
 .hide{
     display: none !important;
+}
+
+.product-contact .ct p{
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+.product-contact .ct p:last-child{
+    margin-bottom: 0;
+}
+.product-contact .ct{
+    padding: 6px 20px;
+    border-radius: 6px;
+    background: #d0021c;
+    color: #fff;
+    display: block;
+    text-align: center;
+}
+.product-contact .ct:hover{
+    opacity: 0.8;
+    transition: 0.2s ease;
+}
+.product-contact .ct .phone{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+ /* Custom CSS for Styling */
+ .custom-modal {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    top:20%;
+  }
+  .custom-modal h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  .custom-modal .uk-form-row {
+    margin-bottom: 15px;
+  }
+  .custom-modal .uk-form-controls input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    height:40px;
+  }
+
+  .uk-form-row label{
+    font-weight: 500;
+    margin-bottom:5px;
+    display: block;
+  }
+
+  .custom-modal button {
+    background-color: #f00000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  .custom-modal button:hover {
+    background-color: #0056b3;
+  }
+  .error-message {
+    margin-top: 5px;
+    font-size: 12px;
+    font-style: italic;
+    display: block;
+    color: red;
+}
+.switcher-tab li{
+    margin-right:10px;
+}
+.switcher-tab li a{
+    display: block;
+    border: 0.8px solid #98a2b3;
+    color: #000;
+    background: #fff;
+    padding:8px 12px;
+    transition: all 0.3s linear;
+}
+.switcher-tab li:hover a{
+    background: #da251c;
+    color:#fff;
+    border-color:#da251c;
+}
+.project-container .heading-6 > *{
+    font-size:25px;
+    text-transform: uppercase;
+}
+
+.heading-3 {
+    font-family: 'Roboto Flex';
+}
+
+.panel-history{
+    height: 440px;
+    background: #F9FAFB url('img/timeline-bg.jpg');
+}
+
+@media(min-width: 1220px){
+    .panel-intro-container .panel-body{
+        padding-left:20%;
+    }
+}
+
+@media(max-width: 768px){
+    .panel-intro-container .panel-body{
+        padding-left:20px;
+    }
+}
+.panel-intro-container{
+    margin-bottom:50px;
+}
+.panel-intro-container .panel-body .heading-10 {
+    font-family: var(--third-font);
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.panel-intro-container .panel-body .description{
+    font-family: var(--third-font);
+    font-size:15px;
+    line-height:25px;
+}
+.panel-intro-container .image img{
+    border-radius: 15px 0 0 15px;
+}
+
+.t-readmore > *{
+    color:var(--primary-color);
+    position: relative;
+    display: inline-block;
+    padding-right:10px;
+}
+.t-readmore > *:before{
+    content:'+';
+    display: block;
+    position: absolute;
+    right:0;
+    top:50%;
+    transform: translate(0, -50%);
+}
+
+.panel-history .uk-container{
+    position: relative;
+    height:400px;
+}
+.panel-history .uk-container:before{
+    content:'';
+    display: block;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width:100%;
+    height:1px;
+    background: var(--primary-color);
+}
+
+.timeline-item{
+    max-width:189px;
+    height:172px;
+    position: absolute;
+    left:0;
+    top:0;
+}
+
+.panel-history .uk-container{
+    position: relative;
+}
+.timeline-item .overlay{
+    padding-left:20px;
+    position: relative;
+    height:100%;
+}
+
+.timeline-item .overlay:before{
+    width:1px;
+    height:100%;
+    background: #667085;
+    position: absolute;
+    left:0;
+    top:0;
+    display: block;
+    content:'';
+}
+.timeline-item .overlay:after{
+    display: block;
+    content:'';
+    width:15px;
+    height:15px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom:0;
+    left:-7px;
+}
+.timeline-item:nth-child(even){
+    top:193px;
+}
+.timeline-item:nth-child(odd){
+    top:35px
+}
+.timeline-item:nth-child(1){    
+    left:0;
+}
+
+.timeline-item:nth-child(2){
+    left:200px;
+}
+
+.timeline-item:nth-child(3){
+    left:400px;
+}
+.timeline-item:nth-child(4){
+    left:600px;
+}
+
+.timeline-item:nth-child(5){
+    left:800px;
+}
+.timeline-item:nth-child(6){
+    left:1000px;
+}
+
+.timeline-item:nth-child(7){
+    left:1200px;
+}
+
+.timeline-item:nth-child(even) .overlay{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Ghim chữ xuống dưới */
+}
+.timeline-item:nth-child(even) .overlay:after{
+    top:0;
+}
+
+
+.commit-item{
+    display: flex;
+    align-items: center;
+}
+.commit-item .image{
+    width: 55px;
+    height: auto;
+    margin-right: 10px;
+}
+.popup-gallery .commit{
+    padding: 10px 0 20px 0;
+}
+.popup-gallery .commit .commit-item{
+    background: #f7f7f7;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    padding: 8px 10px;
+    border: 1px solid #f1f1f1;
+}
+.popup-gallery .commit .commit-item p{
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+.popup-gallery .pd-img{
+    position: relative;
+}
+.popup-gallery .group-ic{
+    position: absolute;
+    bottom: -27px;
+    z-index: 10;
+    width: 100%;
+}
+
+.ic-3{
+    display: flex;
+    align-items: center;
+}
+.ic-3 .tg{
+    margin-right: 10px;
+}
+.ic-4{
+    margin-bottom: 10px;
+}
+
+.ic-1,.ic-2{
+    width: 35px;
+}
+.ic-3 .tg{
+    max-width: 37px;
+}
+.guarantee img{
+    width: 24px;
+    height: 23px;
+}
+
+@media (min-width: 1220px){
+    .popup-gallery .swiper-container .image{
+        height:615px;
+    }
 }

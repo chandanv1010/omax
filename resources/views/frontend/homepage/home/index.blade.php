@@ -9,6 +9,59 @@
 @section('content')
 
     @include('frontend.component.slide')
+    @if(isset($widgets['intro']))
+    @foreach($widgets['intro']->object as $key => $val)
+    @php
+        $canonical = write_url($val->languages->canonical);
+        $image = $val->image;
+        $name = $val->languages->name;
+        $description = $val->languages->description;
+    @endphp
+    <div class="panel-intro-container">
+        <div class="uk-grid uk-grid-medium uk-flex uk-flex-middle">
+            <div class="uk-width-large-2-5">
+                <div class="panel-body">
+                    <h2 class="heading-10"><span>{{ $val->languages->name }}</span></h2>
+                    <div class="description">
+                        {!! $val->languages->description !!}
+                    </div>
+                    <div class="t-readmore">
+                        <a href="{{ $canonical }}" title="{{ $name }}">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-large-3-5">
+                <span href="{{ $canonical }}" title="{{ $name }}" class="image img-cover">
+                    <div class="skeleton-loading img-zoomin"></div>
+                    <img class="lazy-image img-zoomin" data-src="{{ $image }}" alt="{{ $name }}">
+                </span>
+            </div>
+        </div>
+    </div>
+    @endforeach
+    @endif
+
+    {{-- @dd($widgets['history']) --}}
+    @if(isset($widgets['history']))
+    @foreach($widgets['history']->object as $key => $val)
+    <div class="panel-history mb30 mt30">
+        <div class="uk-container uk-container-center">
+            @if(isset($val->posts) && count($val->posts))
+            @foreach($val->posts as $post)
+            <div class="timeline-item">
+                <div class="overlay">
+                    <div class="title"><span>{{ $post->languages->first()->name }}</span></div>
+                    <div class="description">
+                        {!! $post->languages->first()->description !!}
+                    </div>
+                </div>
+            </div>
+            @endforeach
+            @endif
+        </div>
+    </div>
+    @endforeach
+    @endif
 
     <div class="product-container panel-category mt-[30px]">
         <div class="uk-container uk-container-center">

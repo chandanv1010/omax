@@ -32,6 +32,7 @@
                                         </div>
                                     </div>
                                     <div class="video-techincal">
+                                        <a href="#my-qr" data-uk-modal class="vt-item">{!! $product->qrcode !!}</a>
                                         <a href="#my-video" data-uk-modal class="vt-item image img-scaledown"><img src="{{ asset('frontend/resources/img/video.webp') }}" alt=""></a>
                                         <a href="#my-description" data-uk-modal class="vt-item image img-scaledown"><img src="{{ asset('frontend/resources/img/info.png') }}" alt=""></a>
                                     </div>
@@ -48,30 +49,70 @@
                                             <?php }  ?>
                                         </div>
                                     </div>
+                                    <div class="group-ic">
+                                        <div class="ic-3">
+                                            <div class="tg">
+                                                <img src="/userfiles/image/Them-tieu-de-2.png" alt="">
+                                            </div>
+                                            <div class="tg">
+                                                <img src="/userfiles/image/icon-chat-luong-1-267x300.png" alt="">
+                                            </div>
+                                            <div class="tg">
+                                                <img src="/userfiles/image/Icon-Doi-Tra-Hang-2(1).jpg" alt="">
+                                            </div>
+                                            <div class="tg">
+                                                <img src="" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        {{-- @php
-                            $slideKeyword = App\Enums\SlideEnum::COMMIT;
-                        @endphp
-                        @if(isset($slides[$slideKeyword]) && count($slides[$slideKeyword]['item']))
-                            <div class="commit">
-                                <div class="uk-grid uk-grid-small">
-                                    @foreach($slides[$slideKeyword]['item'] as $key => $val )
-                                        <div class="uk-width-small-1-2">
-                                            <div class="commit-item">
-                                                <a href="" class="image img-cover">
-                                                    <img src="{{ $val['image'] }}" alt="">
-                                                </a>
-                                                <div class="txt">
-                                                    <p>{{ $val['name'] }}</p>
-                                                </div>
+                        
+                        <div class="commit">
+                            <div class="uk-grid uk-grid-small">
+                                    <div class="uk-width-small-1-2">
+                                        <div class="commit-item">
+                                            <a href="" class="image img-cover">
+                                                <img src="/userfiles/image/cm1.webp" alt="">
+                                            </a>
+                                            <div class="txt">
+                                                <p>Hỗ Trợ lắp đặt</p>
                                             </div>
                                         </div>
-                                    @endforeach
+                                    </div>
+                                        <div class="uk-width-small-1-2">
+                                        <div class="commit-item">
+                                            <a href="" class="image img-cover">
+                                                <img src="/userfiles/image/cm2.webp" alt="">
+                                            </a>
+                                            <div class="txt">
+                                                <p>Bảo Trì Định Kỳ</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-small-1-2">
+                                        <div class="commit-item">
+                                            <a href="" class="image img-cover">
+                                                <img src="/userfiles/image/cm3.webp" alt="">
+                                            </a>
+                                            <div class="txt">
+                                                <p>Bảo Hành Chính Hãng</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="uk-width-small-1-2">
+                                        <div class="commit-item">
+                                            <a href="" class="image img-cover">
+                                                <img src="/userfiles/image/chinh-sach-van-chuyen.png" alt="">
+                                            </a>
+                                            <div class="txt">
+                                                <p>Vận Chuyển Tận Nơi</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        @endif --}}
+                        </div>
                     </div>
                 @endif
             </div>
@@ -107,7 +148,7 @@
                     <div class="product-description mb15">
                         {!! $product->languages->first()->pivot->description !!}
                     </div>
-                    {{-- <div class="product-contact">
+                    <div class="product-contact">
                         <div class="uk-grid uk-grid-small">
                             <div class="uk-width-small-1-2">
                                 <a href="#modal-form" data-uk-modal class="ct" style="padding:20px 0;text-transform:uppercase;font-weight:600">
@@ -115,13 +156,13 @@
                                 </a>
                             </div>
                             <div class="uk-width-small-1-2">
-                                <a href="tel:{{ $system['contact_hotline_hn']  }}" class="ct">
-                                    <p>{{ $system['text_1'] }}</p>
-                                    <p class="phone"> {{ $system['contact_hotline_hn'] }}</p>
+                                <a href="tel:{{ $system['contact_hotline']  }}" class="ct">
+                                    <p>HOTLINE</p>
+                                    <p class="phone"> {{ $system['contact_hotline'] }}</p>
                                 </a>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -256,6 +297,17 @@
         <div class="modal-content">
             <h2 class="heading-1 span">Thông số kỹ thuật</h2>
             {!! $description !!}
+        </div>
+    </div>
+</div>
+
+
+<div id="my-qr" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"></a>
+        <div class="modal-content">
+            <h2 class="heading-1 span">Mã QR</h2>
+            {!! $product->qrcode !!}
         </div>
     </div>
 </div>

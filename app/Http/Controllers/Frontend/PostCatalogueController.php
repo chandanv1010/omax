@@ -42,17 +42,16 @@ class PostCatalogueController extends FrontendController
     public function index($id, $request, $page = 1)
     {
         $postCatalogue = $this->postCatalogueRepository->getPostCatalogueById($id, $this->language);
-        if ($postCatalogue->canonical === 'dich-vu' || $postCatalogue->parent_id == 21) {
-            $postCatalogue->children = $this->postCatalogueRepository->findByCondition(
-                [
-                    ['publish', '=', 2],
-                    ['parent_id', '=', 21]
-                ],
-                true,
-                [],
-                ['order', 'desc']
-            );
-        }
+        $postCatalogue->children = $this->postCatalogueRepository->findByCondition(
+            [
+                ['publish', '=', 2],
+                ['parent_id', '=', $postCatalogue->id]
+            ],
+            true,
+            [],
+            ['order', 'desc']
+        );
+        
 
         $breadcrumb = $this->postCatalogueRepository->breadcrumb($postCatalogue, $this->language);
         $posts = $this->postService->paginate(

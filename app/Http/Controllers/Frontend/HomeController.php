@@ -47,6 +47,8 @@ class HomeController extends FrontendController
             ['keyword' => 'video', 'object' => true],
             ['keyword' => 'news', 'object' => true, 'children' => true],
             ['keyword' => 'customer-banner', 'object' => true],
+            ['keyword' => 'history', 'object' => true],
+            ['keyword' => 'intro'],
         ], $this->language);
 
 
