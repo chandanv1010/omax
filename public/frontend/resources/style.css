@@ -1875,3 +1875,7 @@ form .btn button {
         height:615px;
     }
 }
+
+.news-item .image{
+    height:256px;
+}
