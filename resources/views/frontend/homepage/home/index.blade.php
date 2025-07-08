@@ -123,7 +123,7 @@
                     @if ($val->products)
                     <div class="uk-grid uk-grid-medium">
                         @foreach ($val->products as $keyProduct => $product)
-                            <div class="uk-width-1-2 uk-width-small-1-2 uk-width-medium-1-3 uk-width-large-1-4 mb20">
+                            <div class="uk-width-small-1-1 uk-width-medium-1-3 uk-width-large-1-4 mb20">
                                 @include('frontend/component/product-feature', [
                                     'product' => $product,
                                 ])
@@ -183,16 +183,17 @@
                         @endforeach
                     @endif
                 </div>
-                @if ($cat->posts)
-                    <ul class="panel-body uk-flex uk-flex-middle uk-flex-wrap uk-container uk-container-center uk-switcher"
-                        id="product-switcher">
+                <div class="uk-container uk-container-center">
+                    @if ($cat->posts)
+                    <div class="uk-grid uk-grid-medium">
                         @foreach ($cat->posts as $keyPost => $post)
-                            @include('frontend/component/post-video', [
-                                'posts' => $post,
-                            ])
+                            <div class="uk-width-1-2 uk-width-small-1-2 uk-width-medium-1-3 mb20">
+                                @include('frontend/component/post-item', [ 'posts' => $post ])
+                            </div>
                         @endforeach
-                    </ul>
-                @endif
+                    </div>
+                    @endif
+                </div>
             @endforeach
         @endif
     </div>

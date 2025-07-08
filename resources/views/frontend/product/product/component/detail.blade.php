@@ -156,10 +156,7 @@
                                 </a>
                             </div>
                             <div class="uk-width-small-1-2">
-                                <a href="tel:{{ $system['contact_hotline']  }}" class="ct">
-                                    <p>HOTLINE</p>
-                                    <p class="phone"> {{ $system['contact_hotline'] }}</p>
-                                </a>
+                                <button class="btn-product-button addToCart ct"  style="padding:20px 0;text-transform:uppercase;font-weight:600;width:100%;border:0;" data-id="{{ $product->id }}">Thêm vào giỏ hàng</button>
                             </div>
                         </div>
                     </div>

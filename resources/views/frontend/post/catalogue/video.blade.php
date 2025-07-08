@@ -17,8 +17,6 @@
 
         <div class="uk-container uk-container-center">
             <div class="project-container">
-
-
                 <h1 class="heading-6"><span>{{ $postCatalogue->name }}</span></h1>
                 <div class="description">
                     {!! $postCatalogue->description !!}
@@ -33,7 +31,7 @@
                                     $image = image($post->image);
                                     $canonical = write_url($post->languages->first()->pivot->canonical);
                                 @endphp
-                                <div class="uk-width-medium-1-2 uk-width-large-1-3 project-item">
+                                <div class="uk-width-small-1-2 uk-width-1-2 uk-width-medium-1-2 uk-width-large-1-3 project-item">
                                     <div class="project-item-1">
                                         <a href="{{ $canonical }}" class="image img-cover"><img src="{{ $image }}"
                                                 alt="{{ $name }}"></a>
@@ -58,7 +56,7 @@
                 <img src="{{ $slides[$slideKeyword4]['item'][0]['image'] }}" alt="">
             @endif
 
-            <div class="form-content uk-container uk-container-center">
+            <div class="form-content uk-container uk-container-center uk-visible-large">
                 <div class="uk-flex uk-flex-middle uk-flex-wrap form-content-item">
                     <div class="form-content-left">
                         <h3>Phân phối toàn quốc</h3>

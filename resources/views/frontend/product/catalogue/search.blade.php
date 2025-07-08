@@ -8,7 +8,7 @@
                 <div class="product-list mb30">
                     <div class="uk-grid uk-grid-medium">
                         @foreach($products as $product)
-                        <div class="uk-width-1-2 uk-width-small-1-2 uk-width-medium-1-3 mb20">
+                        <div class="uk-width-small-1-2 uk-width-medium-1-3 mb20">
                             @include('frontend.component.p-item', ['product'  => $product])
                         </div>
                         @endforeach

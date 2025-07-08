@@ -184,7 +184,7 @@ ul li,ol li{
 }
 
 .home-slider .slide-description {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto Flex", sans-serif;
     font-weight: 400;
     font-size: 34px;
     text-align: center;
@@ -224,7 +224,7 @@ ul li,ol li{
     width: 50%;
 }
 .mobile-slider .slide-description {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto Flex", sans-serif;
     font-weight: 400;
     font-size: 16px;
     text-align: center;
@@ -259,14 +259,14 @@ ul li,ol li{
     margin-left: 20px;
 }
 .banner-header-left .uk-banner-header-content .banner-header-title {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto Flex", sans-serif;
     font-size: 28px;
     font-weight: 600;
     line-height: 1.2;
     color: #101828;
 }
 .banner-header-left .uk-banner-header-content .banner-header-description {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto Flex", sans-serif;
     font-weight: 400;
     font-size: 20px;
     text-align: left;
@@ -413,7 +413,7 @@ ul li,ol li{
     z-index: 1;
     bottom: 3%;
     left: 3%;
-    font-family: "Montserrat";
+    font-family: "Roboto Flex";
     font-weight: 600;
     padding: 4px;
     background: #1d232e;
@@ -463,7 +463,7 @@ ul li,ol li{
 }
 
 .video-content .video-description {
-    font-family: "Montserrat";
+    font-family: "Roboto Flex";
     width: 88%;
     margin: auto;
     padding: 4px;
@@ -473,16 +473,13 @@ ul li,ol li{
     line-height: 22px;
     letter-spacing: 1px;
 }
-.video-content .post-item {
-    width: 378px;
-    margin: 0 20px;
-}
+
 .video-content .title,
 .video-content-mobile .title {
     margin: 10px 0;
 }
 .video-content .title a {
-    font-family: "Montserrat";
+    font-family: "Roboto Flex";
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
@@ -496,22 +493,18 @@ ul li,ol li{
     margin-top:20px;
 }
 .video-content-mobile .title a {
-    font-family: "Montserrat";
+    font-family: "Roboto Flex";
     font-weight: 400;
     color: #000;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 1px;
 }
-.news-content .post-item {
-    width: 378px;
-    margin: 20px;
-}
 .news-content .title {
     margin: 10px 0;
 }
 .news-content .title a {
-    font-family: "Montserrat";
+    font-family: "Roboto Flex";
     font-weight: 400;
     color: #000;
     font-size: 16px;
@@ -608,7 +601,7 @@ ul li,ol li{
 
 .certificate-info .certificate-description,
 .customer-banner .customer-banner .customer-banner-description {
-    font-family: "Montserrat";
+    font-family: "Roboto Flex";
     width: 88%;
     margin: auto;
     padding: 4px;
@@ -662,7 +655,7 @@ ul li,ol li{
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-family: "Montserrat";
+    font-family: "Roboto Flex";
     top: 50%;
     left: 50%;
     z-index: 10;
@@ -697,7 +690,7 @@ ul li,ol li{
     z-index: 1;
     bottom: 3%;
     left: 3%;
-    font-family: "Montserrat";
+    font-family: "Roboto Flex";
     font-weight: 600;
     padding: 4px;
     background: #1d232e;
@@ -759,7 +752,7 @@ ul li,ol li{
     color: #000;
 }
 .video .description {
-    font-family: "Montserrat";
+    font-family: "Roboto Flex";
     width: 88%;
     margin: auto;
     padding: 4px;
@@ -1135,9 +1128,9 @@ form .btn button {
 
 /*  FOOTER */
 .footer{
-    border-top: 10px solid;
+    border-top: 3px solid;
 	border-color: #d8271d;
-    background-color: #E5E5E5;
+    background: url('img/footer.jpg');
 }
 .footer-upper{
     padding: 40px 0;
@@ -1149,7 +1142,7 @@ form .btn button {
 }
 .footer-menu .heading{
     font-size:16px;
-    color:#000;
+    color:#fff;
     margin-bottom:20px;
     font-weight: bold;
 }
@@ -1158,7 +1151,7 @@ form .btn button {
     transition: all 0.5s ease;
 }
 .footer-menu ul li > *{
-    color:#000;
+    color:#fff;
 }
 .footer-menu ul li:hover{
     padding-left:15px;
@@ -1166,7 +1159,7 @@ form .btn button {
 .social-footer a{
     padding-left:40px;
     position: relative;
-    color:#000;
+    color:#fff;
 }
 .social-footer .social-item{
     margin-bottom:20px;
@@ -1228,7 +1221,7 @@ form .btn button {
 .footer-contact p{
     position:relative;
     padding-left:35px;
-    color:#000;
+    color:#fff;
 }
 .footer-contact p:before{
     content:'';
@@ -1239,7 +1232,7 @@ form .btn button {
     background:url('img/map.png');
     width:24px;
     height:24px;
-    filter: brightness(0%);
+    filter: brightness(0) invert(1) ;
 }
 .footer-contact p.address:before{
     left:-4px;
@@ -1257,7 +1250,7 @@ form .btn button {
 .copyright{
     padding:6px;
     /* background-color: var(--main-color); */
-    color:#333;
+    color:#fff;
 }
 
 .heading-5{
@@ -1275,7 +1268,7 @@ form .btn button {
     padding-bottom:10px;
 }
 .heading-6 > *{
-    color:#000;
+    color:#fff;
     font-size:16px;
     font-weight: bold;
 }
@@ -1546,7 +1539,6 @@ form .btn button {
 .panel-product .product-item{
     padding: 10px;
     border: 1px solid #e5e5e5;
-    border-left: 0;
 }
 .panel-product .swiper-slide:first-child .product-item{
     border: 1px solid #e5e5e5;
@@ -1878,4 +1870,168 @@ form .btn button {
 
 .news-item .image{
     height:256px;
+}
+ .search-mobile .uk-form input{
+    width: 100%;
+    border-radius: 8px;
+    height: 38px;
+    touch-action: none !important;
+}
+.search-mobile .uk-form input::placeholder{
+    font-weight: 600;
+    font-size: 13px;
+}
+.search-mobile{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.search-mobile .form-row button {
+    position: absolute;
+    right: 10px;
+    border: none;
+    background-color: #fff;
+    top: 10px;
+}
+.search-mobile .form-row {
+    position: relative;
+}
+.mobile-upper {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-bottom: 12px;
+}
+.panel-slide {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+@media(max-width: 600px){
+    .panel-intro-container .image{
+        padding:0 15px;
+        margin-top:20px;
+    }
+    .panel-intro-container .image img{
+        border-radius: 0;
+    }
+    .panel-history {
+        display: none;
+    }
+    .panel-category .product-item .image{
+        height: 180px;
+    }
+    .product-item .image{
+        height: auto !important;
+    }
+    .tabs{
+        display: none;
+    }
+    .video-content .video-description{
+        margin-left:0;
+        margin-right:0;
+        font-size:14px;
+        width: 100%;
+        text-align: center;
+    }
+    .product-item .title{
+        font-size:14px;
+    }
+    .product-item .product-price .price{
+        margin-top:0;
+    }
+    .post .post-item .image{
+        height: 205px;
+    }
+   .certificate-section .certificate-info{
+    position: static;
+    transform:translate(0, 0);
+   }
+   .video-info{
+    padding:0;
+   }
+   .certificate-info .certificate-description, .customer-banner .customer-banner .customer-banner-description{
+    width:100%;
+    margin:0;
+   }
+   .certificate-section{
+    padding-bottom:40px;
+   }
+   .certificates-carousel .certificate-item{
+    margin:0;
+   }
+   .certificate-item{
+    width:100%;
+   }
+   .project-banner .page-breadcrumb, .product-banner .page-breadcrumb{
+    width:100%;
+   }
+   .mobile-header{
+    margin-bottom:15px;
+   }
+     .popup-gallery .uk-grid{
+        flex-direction: column-reverse;
+    }
+    /* .popup-gallery .swiper-container-thumbs .swiper-wrapper{
+        display: flex !important;
+    } */
+
+    .popup-gallery .swiper-container-thumbs .swiper-wrapper{
+        display: flex !important;
+        height: 100% !important;
+    }
+    .swiper-container-thumbs{
+        height:auto !important;
+    }
+    .swiper-container-thumbs .image{
+        border:0;
+        padding:10px;
+    }
+    .popup-gallery .pd-img{
+        padding-bottom:50px;
+    }
+    .popup-gallery .group-ic{
+        bottom:7px;
+    }
+     .video-techincal{
+        display: flex;
+    }
+    .video-techincal .vt-item:first-child{
+        margin-right: 5px;
+    }
+    .video-techincal .vt-item:last-child{
+        margin-left: 5px;
+    }
+    .swiper-container-thumbs .image{
+        border:0 !important;
+    }
+    .project-banner .image{
+        height:140px;
+    }
+    .project-banner .page-breadcrumb li a, .slash, .product-banner .page-breadcrumb li a, .slash{
+        font-size:14px;
+    }
+    .product-contact .ct{
+        margin-bottom:15px;
+    }
+    .panel-product-detail{
+        padding:10px;
+    }
+    .video .description{
+        font-size:14px;
+    }
+    .video .description{
+        width:100%;
+        margin:0;
+    }
+
+    .page-heading {
+        font-size:20px;
+        line-height:25px;
+    }
+    .post-detail-container .post-content .description{
+        line-height:25px;
+    }
+    .panel-news .post-item{
+        margin-bottom:25px !important;
+    }
 }

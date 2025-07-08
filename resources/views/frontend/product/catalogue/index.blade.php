@@ -20,7 +20,7 @@
                     @if (!is_null($products))
                     <div class="uk-grid uk-grid-medium">
                         @foreach ($products as $product)
-                        <div class="uk-width-medium-1-2 uk-width-large-1-4 mb20">
+                        <div class="uk-width-small-1-1 uk-width-medium-1-2 uk-width-large-1-4 mb20">
                             @include('frontend.component.p-item', ['product' => $product])
                         </div>
                          @endforeach

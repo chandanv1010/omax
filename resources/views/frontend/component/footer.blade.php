@@ -14,15 +14,17 @@
             <div class="customer-banners">
                 @if (isset($widgets['customer-banner']->album))
                     <div class="customer-banner-item uk-flex uk-flex-middle">
-                        @foreach ($widgets['customer-banner']->album as $val)
-                            <div class="customer-banner-image">
-                                <img src="{{ $val }}" alt="{{ $widgets['customer-banner']->name }}">
+                        <div class="uk-grid uk-grid-medium">
+                            @foreach ($widgets['customer-banner']->album as $val)
+                            <div class="uk-width-1-2 uk-width-small-1-2 uk-width-medium-1-3 uk-width-large-1-6 mb30">
+                                    <div class="customer-banner-image">
+                                    <img src="{{ $val }}" alt="{{ $widgets['customer-banner']->name }}">
+                                </div>
                             </div>
-                        @endforeach
+                             @endforeach
+                        </div>
                     </div>
-
                 @endif
-
             </div>
         </div>
     @endif

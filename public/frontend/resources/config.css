@@ -26,7 +26,7 @@ i[class^=fi-rs-],span[class^=fi-rs-]{line-height:0 !important}i[class^=fi-rs-]:b
     box-sizing: border-box;
 }
 body{
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
     /* font-weight: 300; */
     margin:0;
     color:#000;
@@ -1136,7 +1136,6 @@ ul li{
     text-align: justify;
     line-height:22px;
     font-size:13px;
-    font-family: Inter;
     font-weight: 400;
 }
 .order-success_note{
@@ -1232,7 +1231,6 @@ ul li{
 
 .product-column .product-title{
     font-weight: normal;
-    font-family: Inter;
     font-size:13px;
     color:#005599;
 }
@@ -1303,4 +1301,7 @@ ul li{
 input[readonly]{
     background-color: #eee !important;
     opacity: 1;
+}
+.order-success_note{
+    font-size:16px;
 }
