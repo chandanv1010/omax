@@ -76,6 +76,28 @@ class System{
                 'intro' => ['type' => 'textarea', 'label' => 'Giới thiệu'],
             ]
         ];
+        $data['hcm'] = [
+            'label' => 'Thông tin liên hệ',
+            'description' => 'Cài đặt thông tin liên hệ của website ví dụ: Địa chỉ công ty, Văn phòng giao dịch, Hotline, Bản đồ, vv...',
+            'value' => [
+                'address' => ['type' => 'text', 'label' => 'Địa chỉ Hồ Chí Minh'],
+                'phone' => ['type' => 'text', 'label' => 'Số điện thoại'],
+                'hotline' => ['type' => 'text', 'label' => 'Hotline'],
+                
+            ]
+        ];
+
+
+        $data['nm'] = [
+            'label' => 'Thông tin liên hệ',
+            'description' => 'Cài đặt thông tin liên hệ của website ví dụ: Địa chỉ công ty, Văn phòng giao dịch, Hotline, Bản đồ, vv...',
+            'value' => [
+                'address' => ['type' => 'text', 'label' => 'Địa chỉ Nhà Máy'],
+                'phone' => ['type' => 'text', 'label' => 'Số điện thoại'],
+                'hotline' => ['type' => 'text', 'label' => 'Hotline'],
+                
+            ]
+        ];
        
 
         $data['seo'] = [

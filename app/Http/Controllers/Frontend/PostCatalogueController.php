@@ -80,11 +80,11 @@ class PostCatalogueController extends FrontendController
 
         $template = '';
         if (Agent::isMobile() && $postCatalogue->canonical == 'video') {
-            $template = 'mobile.post.catalogue.video';
+            
         } else if (Agent::isMobile() && $postCatalogue->canonical == 'du-an') {
             $template = 'mobile.post.catalogue.project';
         } else if ($postCatalogue->canonical == 'du-an') {
-            $template = 'frontend.post.catalogue.project';
+           
         } else if ($postCatalogue->canonical == 'video') {
             $template = 'frontend.post.catalogue.video';
         } else if (Agent::isMobile() && ($postCatalogue->canonical == 'thiet-ke-noi-that' || $postCatalogue->canonical == 'thi-cong-noi-that' || $postCatalogue->canonical == 'san-xuat-theo-yeu-cau')) {
@@ -118,8 +118,22 @@ class PostCatalogueController extends FrontendController
         } else if (Agent::isMobile()) {
             $template = 'mobile.post.catalogue.index';
         } else {
+           
+        }
+
+        
+       
+        
+        if($postCatalogue->canonical === 'video'){
+            $template = 'frontend.post.catalogue.video';
+        }else if($postCatalogue->canonical === 'du-an'){
+            $template = 'frontend.post.catalogue.project';
+        }else if($postCatalogue->canonical === 'catalogue'){
+            $template = 'frontend.post.catalogue.catalogue';
+        }else{
             $template = 'frontend.post.catalogue.index';
         }
+
 
         $config = $this->config();
         $system = $this->system;

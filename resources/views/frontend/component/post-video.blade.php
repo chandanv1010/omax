@@ -3,9 +3,9 @@
     $canonical = write_url($post->languages[0]->canonical);
     $image = thumb(image($post->image), 600, 400);
 @endphp
-<li class="uk-active">
-    <div class="uk-width-medium-1-2 uk-width-large-1-3 post-item">
-        <a href="{{ $canonical }}" title="{{ $name }}" class="image img-cover img-zoomin">
+<li>
+    <div class="post-item">
+        <a href="{{ $canonical }}" title="{{ $name }}" class="image img-cover">
             <div class="skeleton-loading"></div>
             <img class="lazy-image" data-src="{{ $image }}" alt="{{ $name }}">
         </a>

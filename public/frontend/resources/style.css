@@ -1,15 +1,16 @@
 /* VARIABLES */
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 :root {
     --primary-color: #da251c;
     --secondary-color: #0A3612;
     --third-color: #FEE9B5;
     --hover-color:#fc746c;
     --second-font: 'Asap';
-    --third-font: 'Roboto Flex';
+    --third-font: 'Bai Jamjuree';
 }
 
 body{
-    font-family: 'Roboto Flex', sans-serif;
+    font-family: 'Bai Jamjuree', sans-serif;
     min-height: 1000px;
 }
 
@@ -184,7 +185,7 @@ ul li,ol li{
 }
 
 .home-slider .slide-description {
-    font-family: "Roboto Flex", sans-serif;
+    font-family: "Bai Jamjuree", sans-serif;
     font-weight: 400;
     font-size: 34px;
     text-align: center;
@@ -224,7 +225,7 @@ ul li,ol li{
     width: 50%;
 }
 .mobile-slider .slide-description {
-    font-family: "Roboto Flex", sans-serif;
+    font-family: "Bai Jamjuree", sans-serif;
     font-weight: 400;
     font-size: 16px;
     text-align: center;
@@ -259,14 +260,14 @@ ul li,ol li{
     margin-left: 20px;
 }
 .banner-header-left .uk-banner-header-content .banner-header-title {
-    font-family: "Roboto Flex", sans-serif;
+    font-family: "Bai Jamjuree", sans-serif;
     font-size: 28px;
     font-weight: 600;
     line-height: 1.2;
     color: #101828;
 }
 .banner-header-left .uk-banner-header-content .banner-header-description {
-    font-family: "Roboto Flex", sans-serif;
+    font-family: "Bai Jamjuree", sans-serif;
     font-weight: 400;
     font-size: 20px;
     text-align: left;
@@ -321,6 +322,17 @@ ul li,ol li{
     color: #d8271d;
     text-align: center;
 }
+
+
+.product-item{
+    position: relative;
+    z-index: 100;
+}
+.product-item .image{
+    position: relative;
+    /* z-index: 15; */
+}
+
 .product-item .title {
     font-size: 16px;
     margin: 20px 0;
@@ -413,7 +425,7 @@ ul li,ol li{
     z-index: 1;
     bottom: 3%;
     left: 3%;
-    font-family: "Roboto Flex";
+    font-family: "Bai Jamjuree";
     font-weight: 600;
     padding: 4px;
     background: #1d232e;
@@ -463,7 +475,7 @@ ul li,ol li{
 }
 
 .video-content .video-description {
-    font-family: "Roboto Flex";
+    font-family: "Bai Jamjuree";
     width: 88%;
     margin: auto;
     padding: 4px;
@@ -479,7 +491,7 @@ ul li,ol li{
     margin: 10px 0;
 }
 .video-content .title a {
-    font-family: "Roboto Flex";
+    font-family: "Bai Jamjuree";
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
@@ -493,7 +505,7 @@ ul li,ol li{
     margin-top:20px;
 }
 .video-content-mobile .title a {
-    font-family: "Roboto Flex";
+    font-family: "Bai Jamjuree";
     font-weight: 400;
     color: #000;
     font-size: 14px;
@@ -504,7 +516,7 @@ ul li,ol li{
     margin: 10px 0;
 }
 .news-content .title a {
-    font-family: "Roboto Flex";
+    font-family: "Bai Jamjuree";
     font-weight: 400;
     color: #000;
     font-size: 16px;
@@ -601,7 +613,7 @@ ul li,ol li{
 
 .certificate-info .certificate-description,
 .customer-banner .customer-banner .customer-banner-description {
-    font-family: "Roboto Flex";
+    font-family: "Bai Jamjuree";
     width: 88%;
     margin: auto;
     padding: 4px;
@@ -655,7 +667,7 @@ ul li,ol li{
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-family: "Roboto Flex";
+    font-family: "Bai Jamjuree";
     top: 50%;
     left: 50%;
     z-index: 10;
@@ -690,7 +702,7 @@ ul li,ol li{
     z-index: 1;
     bottom: 3%;
     left: 3%;
-    font-family: "Roboto Flex";
+    font-family: "Bai Jamjuree";
     font-weight: 600;
     padding: 4px;
     background: #1d232e;
@@ -752,7 +764,7 @@ ul li,ol li{
     color: #000;
 }
 .video .description {
-    font-family: "Roboto Flex";
+    font-family: "Bai Jamjuree";
     width: 88%;
     margin: auto;
     padding: 4px;
@@ -1108,7 +1120,7 @@ form .btn button {
     position: relative;
 }
 .product-item:before{
-    content:'';
+    /* content:'';
     display: block;
     position: absolute;
     left:0;
@@ -1116,7 +1128,7 @@ form .btn button {
     width:310px;
     height:164px;
     background: url('img/water-mark.png');
-    z-index: 10;
+    z-index: 10; */
 }
 
 @media (max-width: 600px){
@@ -1295,7 +1307,7 @@ form .btn button {
 
 .bottom-bar .btn {
     color: #fff;
-    background-color: var(--main-color);
+    background-color: var(--primary-color);
     margin: 5px;
     width: 125px;
     display: flex;
@@ -1368,7 +1380,7 @@ form .btn button {
 
 .footer-contact .heading-6{
     text-transform: uppercase;
-    font-family: 'Roboto Flex';
+    font-family: 'Bai Jamjuree';
 }
 
 
@@ -1657,7 +1669,7 @@ form .btn button {
 }
 
 .heading-3 {
-    font-family: 'Roboto Flex';
+    font-family: 'Bai Jamjuree';
 }
 
 .panel-history{
@@ -2034,4 +2046,164 @@ form .btn button {
     .panel-news .post-item{
         margin-bottom:25px !important;
     }
+}
+
+.catalogue-item{
+    position: relative;
+}
+
+.view-pdf {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    margin: 0 0 0 -40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #ed1c24;
+    padding: 2px;
+}
+
+.view-pdf {
+    background-color: #fff;
+}
+.view-pdf svg {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+}
+
+@media screen and (min-width: 1100px) {
+    .on-show .view-pdf {
+        animation: fadeInUp;
+        animation-duration: 1.2s;
+        animation-delay: .8s;
+        animation-fill-mode: forwards;
+    }
+}
+
+
+.catalogue-slide .swiper-wrapper{
+    padding-bottom:80px;
+}
+
+.catalogue-container{
+    background: #ececec;
+    padding: 40px 0;
+}
+
+.view-pdf svg path {
+    fill: #ed1c24;
+    stroke: none;
+    stroke-miterlimit: 10;
+    stroke-width: 0;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+}
+
+@media screen and (min-width: 1100px) {
+    .view-pdf:hover {
+        background-color: #ed1c24;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .box-news, .btn-1, .button-more a, .close-album, .close-details, .close-news, .close-news::after, .close-pics, .close-popup, .close-top, .close-video, .col-contact li a, .color-item, .date-news, .details-text a, .go-top, .item-cata, .item-cata h3::before, .item-cus img, .item-document, .item-document .pic-img, .item-news, .item-product img, .item-product::after, .item-search a, .item-search::before, .nav-home li, .nav-home li a, .nav-home li span, .pic-bg, .share-pro li a, .share-pro li a::after, .share-pro li a::before, .tab-des li a, .time-line li a, .txt-big-news, .txt-big-news::before, .txt-pro, .txt-pro-new, .txt-pro::before, .txt-project, .txt-project::before, .view-more, .view-news::after, .view-pdf, .view-zoom-al, .zoom, .zoom::after, button::before {
+        transition: all .3s ease-in-out;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .view-pdf:hover svg path {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2;
+        animation-name: DrawStroke;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-timing-function: linear;
+    }
+}
+
+@keyframes DrawStroke{
+    0% {
+        stroke-dashoffset: 800;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.heading-10{
+    text-align: center;
+    margin-bottom:30px;
+    text-transform: uppercase;
+}
+
+.contact-page{
+    background: #ececec;
+}
+.contact-page-container{
+    padding: 50px 0;
+}
+
+.contact-item{
+    background: #fff;
+    padding:20px;
+}
+
+.contact-item .heading-3{
+    margin-bottom:30px;
+}
+.contact-item .info div{
+    margin-bottom:15px;
+}
+
+@media(min-width: 1220px){
+    .contact-form .panel-body,
+    .contact-page-container .panel-body{
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}
+
+.contact-form{
+    padding: 50px 0;
+}
+.contact-form .heading-5{
+    text-align: center;
+}
+
+.contact-form .form-row{
+    margin-bottom:10px;
+}
+.contact-form .input-text{
+    width:100%;
+    height:50px;
+    border:0;
+    background: #fff;
+    padding:10px;
+}
+.contact-form textarea{
+    width:100%;
+    height:169px;
+    border:0;
+    background: #fff;
+    font-family: 'Bai Jamjuree';
+    padding:10px;
+}
+.form-submit-button{
+    vertical-align: middle;
+    background-color: #ed1c24;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 20px;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    line-height: 16px;
+    padding: 15px 20px;
+    text-transform: uppercase;
 }

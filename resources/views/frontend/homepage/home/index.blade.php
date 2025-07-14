@@ -144,26 +144,28 @@
                         <h2 class="heading-3">{{ $widgets['post']->name }}</h2>
                     </div>
                     @if(isset($cat->childrens))
-                        <ul class="uk-tab uk-container uk-container-center uk-flex uk-flex-center uk-flex-middle tabs">
+                        <ul class="uk-tab uk-container uk-container-center uk-flex uk-flex-center uk-flex-middle tabs project-tab">
                             @foreach($cat->childrens as $keyChild => $valChild)
                             @php
                                 $catName = $valChild->languages->name;
                                 $catCanonical = write_url($valChild->languages->canonical);
                             @endphp
-                            <li><a href="{{ $catCanonical }}">{{ $catName }}</a></li>
+                            <li><a data-id="{{ $valChild->id }}" href="{{ $catCanonical }}">{{ $catName }}</a></li>
                             @endforeach
                         </ul>
                     @endif
                     <div class="uk-container uk-container-center">
-                        @if ($cat->posts)
-                        <div class="uk-grid uk-grid-medium">
-                            @foreach ($cat->posts as $keyPost => $post)
-                                <div class="uk-width-1-2 uk-width-small-1-2 uk-width-medium-1-3 mb20">
-                                    @include('frontend/component/post-item', [ 'posts' => $post ])
-                                </div>
-                            @endforeach
+                        <div class="panel-project-body">
+                            @if ($cat->posts)
+                            <div class="uk-grid uk-grid-medium">
+                                @foreach ($cat->posts as $keyPost => $post)
+                                    <div class="uk-width-1-2 uk-width-small-1-2 uk-width-medium-1-3 mb20">
+                                        @include('frontend/component/post-item', [ 'posts' => $post ])
+                                    </div>
+                                @endforeach
+                            </div>
+                            @endif
                         </div>
-                        @endif
                     </div>
                 </div> <!-- Closing the panel-product post div -->
         
@@ -193,7 +195,7 @@
                         @endforeach
                     </div>
                     @endif
-                </div>
+            </div>
             @endforeach
         @endif
     </div>

@@ -68,6 +68,8 @@ use App\Http\Controllers\Seller\OrderController as SellerOrderController;
 use App\Http\Controllers\Seller\SellerController;
 use App\Http\Controllers\Ajax\ViettelPostController;
 
+use App\Http\Controllers\Frontend\ContactController as FeContactController;
+
 //@@useController@@
 
 /*
@@ -82,7 +84,11 @@ use App\Http\Controllers\Ajax\ViettelPostController;
 */
 /* FRONTEND ROUTES  */
 
+Route::get('/ajax/projects', [HomeController::class, 'ajaxProject'])->name('home.project');
+
+
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('lien-he.html', [FeContactController::class, 'index'])->name('contact.index');
 
 Route::get('crawler', [CrawlerController::class, 'index'])->name('crawler.index');
 

@@ -23,7 +23,8 @@ class Post extends Model
         'video',
         'template',
         'viewed',
-        'status_menu'
+        'status_menu',
+        'short_name'
     ];
 
     protected $table = 'posts';

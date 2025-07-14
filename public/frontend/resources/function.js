@@ -183,7 +183,7 @@
 	}
 
 	HT.swiperBestSeller = () => {
-		var swiper = new Swiper(".panel-bestseller .swiper-container", {
+		var swiper = new Swiper(".catalogue-slide .swiper-container", {
 			loop: false,
 			pagination: {
 				el: '.swiper-pagination',
@@ -646,8 +646,39 @@
 		});
 	}
 
+   
+
+    HT.loadProject = () => {
+        $(document).on('click', '.project-tab li a', function(e){
+            e.preventDefault()
+            const _this = $(this)
+            const id = _this.attr('data-id')
+            $.ajax({
+				url: 'ajax/projects', 
+				type: 'GET', 
+				data: {id: id}, 
+				dataType: 'json', 
+				beforeSend: function() {
+					
+				},
+				success: function(res) {
+                    console.log(res.html);
+                    
+                    if(res.html.length > 0){
+                        $('.panel-project-body').html(res.html)
+                    }else{
+                        $('.panel-project-body').html('<div class="uk-text-center">Không tìm thấy dữ liệu hợp lệ</div>')
+                    }
+					
+				},
+			});
+
+        })
+    }
+
 
 	$(document).ready(function(){
+        HT.loadProject();
         HT.popupSwiperSlide();
         HT.highlightTocOnScroll();
         HT.scrollHeading()

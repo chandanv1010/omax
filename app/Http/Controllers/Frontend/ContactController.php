@@ -35,11 +35,7 @@ class ContactController extends FrontendController
             'meta_image' => '',
             'canonical' => write_url('lien-he')
         ];
-        if(Agent::isMobile()){
-            $template = 'mobile.contact.index';
-        }else{
-            $template = 'frontend.contact.index';
-        }
+        $template = 'frontend.contact.index';
         return view($template, compact(
             'widgets',
             'config',
