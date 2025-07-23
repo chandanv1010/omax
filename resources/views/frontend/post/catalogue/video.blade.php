@@ -55,44 +55,51 @@
             @if (isset($slides[$slideKeyword4]))
                 <img src="{{ $slides[$slideKeyword4]['item'][0]['image'] }}" alt="">
             @endif
-
             <div class="form-content uk-container uk-container-center uk-visible-large">
-                <div class="uk-flex uk-flex-middle uk-flex-wrap form-content-item">
-                    <div class="form-content-left">
-                        <h3>Phân phối toàn quốc</h3>
-                        <div class="form-description">
-                            <p>
-                                Văn phòng Hà Nội: Tầng 28, Tòa nhà Sông Đà, Số 110 Trần Phú, Hà Đông
-                            <p class="hotline">Hotline: 84-24-3823-5588</p>
-                            </p>
-                            <p>
-                                Văn phòng Hà Nội: Tầng 28, Tòa nhà Sông Đà, Số 110 Trần Phú, Hà Đông
-                            <p class="hotline">Hotline: 84-24-3823-5588</p>
-                            </p>
-                            <p>
-                                Văn phòng Hà Nội: Tầng 28, Tòa nhà Sông Đà, Số 110 Trần Phú, Hà Đông
-                            <p class="hotline">Hotline: 84-24-3823-5588</p>
-                            </p>
+
+                <div class="uk-container uk-container-center">
+                    <div class="uk-grid uk-grid-medium">
+                        <div class="uk-width-medium-2-3">
+                            <div class="form-content-left">
+                                <h3>Phân phối toàn quốc</h3>
+                                <div class="form-description">
+                                    <p>
+                                        Văn phòng Hà Nội: Tầng 28, Tòa nhà Sông Đà, Số 110 Trần Phú, Hà Đông
+                                    <p class="hotline">Hotline: 84-24-3823-5588</p>
+                                    </p>
+                                    <p>
+                                        Văn phòng Hà Nội: Tầng 28, Tòa nhà Sông Đà, Số 110 Trần Phú, Hà Đông
+                                    <p class="hotline">Hotline: 84-24-3823-5588</p>
+                                    </p>
+                                    <p>
+                                        Văn phòng Hà Nội: Tầng 28, Tòa nhà Sông Đà, Số 110 Trần Phú, Hà Đông
+                                    <p class="hotline">Hotline: 84-24-3823-5588</p>
+                                    </p>
+                                </div>
+                            </div>
+                           
                         </div>
-                    </div>
-                    <div class="form-content-right">
-                        <form class="uk-flex uk-flex-midde uk-flex-column">
-                            <div class="form-input">
-                                <input type="text" name="name" placeholder="Họ và tên....">
+                        <div class="uk-width-medium-1-3">
+                             <div class="form-content-right">
+                                <form class="uk-flex uk-flex-midde uk-flex-column">
+                                    <div class="form-input">
+                                        <input type="text" required name="name" placeholder="Họ và tên....">
+                                    </div>
+                                    <div class="form-input">
+                                        <input type="email" required name="email" placeholder="Email....">
+                                    </div>
+                                    <div class="form-input">
+                                        <input type="text" required name="phone" placeholder="Số điện thoại....">
+                                    </div>
+                                    <div class="form-input">
+                                        <textarea name="" id="" cols="30" rows="10" placeholder="Ghi chú.."></textarea>
+                                    </div>
+                                    <div class="btn">
+                                        <button class="submit">Gửi Thông Tin</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="form-input">
-                                <input type="email" name="email" placeholder="Email....">
-                            </div>
-                            <div class="form-input">
-                                <input type="text" name="phone" placeholder="Số điện thoại....">
-                            </div>
-                            <div class="form-input">
-                                <textarea name="" id="" cols="30" rows="10" placeholder="Ghi chú.."></textarea>
-                            </div>
-                            <div class="btn">
-                                <button class="submit">Gửi Thông Tin</button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

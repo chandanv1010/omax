@@ -11,9 +11,9 @@ class Paypal{
     public function payment($order){
 
 
-        $usd = 23000;
         $cartTotal = $order->cart['cartTotal'] - $order->promotion['discount'];
-
+        
+        $usd = 23000;
         $paypalValue = number_format($cartTotal/$usd, 2, '.', '');
 
         $provider = new PayPalClient;
