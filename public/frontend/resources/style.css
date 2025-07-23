@@ -594,13 +594,13 @@ ul li,ol li{
 .certificates-carousel .certificate-item {
     margin: 0 40px;
 }
-.certificate-section .certificate-info {
+/* .certificate-section .certificate-info {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
-}
+} */
 .certificate-info .certificate-title,
 .customer-banner .customer-banner-title {
     width: 100%;
@@ -2214,4 +2214,8 @@ form .btn button {
     position: absolute;
     top:10%;
     max-width: 40%;
+}
+
+#certificate-slide{
+    margin-top:0;
 }

@@ -235,7 +235,7 @@
         @endforeach
     @endif
 
-    <div class="certificate-section">
+    <div class="certificate-section" id="certificate-slide">
         @if (isset($slides[$slideKeyword4]))
             <img src="{{ $slides[$slideKeyword4]['item'][0]['image'] }}" alt="">
         @endif
